@@ -8,13 +8,13 @@ class Solution {
         for(int i=0;i<text.length();i++){
             if(text.charAt(i)=='b') 
                 b+=1;
-            if(text.charAt(i)=='a') 
+            else if(text.charAt(i)=='a') 
                 a+=1;
-            if(text.charAt(i)=='l') 
+            else if(text.charAt(i)=='l') 
                 l+=1;
-            if(text.charAt(i)=='o') 
+            else if(text.charAt(i)=='o') 
                 o+=1;
-            if(text.charAt(i)=='n') 
+            else if(text.charAt(i)=='n') 
                 n+=1;
         }
 //         int b=map.get('b');
