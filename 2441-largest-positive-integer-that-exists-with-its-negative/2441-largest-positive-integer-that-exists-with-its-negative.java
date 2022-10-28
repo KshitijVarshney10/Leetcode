@@ -3,8 +3,7 @@ class Solution {
         Arrays.sort(nums);
         for(int i=0;i<nums.length;i++){
             int k=nums[i];
-            int index=indexof(nums,-1*k);
-            if(index!=-1)
+            if(indexof(nums,-1*k)!=-1)
                 return  -1*k;
         }
         return -1;
