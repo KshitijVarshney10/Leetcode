@@ -4,8 +4,8 @@ class Solution {
         int maxLen=0;
         HashMap<String,Integer> map=new HashMap<>();
         for(String word : words){
-            StringBuilder sb=new StringBuilder();
-            sb.append(word);
+            StringBuilder sb=new StringBuilder(word);
+            //sb.append(word);
             String reverse=sb.reverse().toString();
             if(map.containsKey(reverse)){
                 maxLen+=word.length()+reverse.length();
@@ -19,8 +19,8 @@ class Solution {
             }
         }
         for(String word : map.keySet()){ 
-            StringBuilder sb=new StringBuilder();
-            sb.append(word);
+            StringBuilder sb=new StringBuilder(word);
+            //sb.append(word);
             String reverse=sb.reverse().toString(); 
             if(word.equals(reverse) && map.get(word)==1){
                 maxLen+=word.length();
