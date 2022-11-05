@@ -1,27 +1,18 @@
 class Solution {
     public String reverseVowels(String s) {
-        String vowels="";String ans="";
-        char[] ch=s.toCharArray();
-        for(int i=0;i<s.length();i++){
-            char beg=s.charAt(i);
-            if(beg=='a'||beg=='A'||beg=='e'||beg=='E'||beg=='i'||beg=='I'||beg=='o'||beg=='O'||beg=='u'||beg=='U')
-                vowels+=beg;
+       char[] st=s.toCharArray();
+        int f=0;
+        int e=st.length-1;
+        while(f<e){
+            for(;(st[f]!='a'&&st[f]!='e'&&st[f]!='i'&&st[f]!='o'&&st[f]!='u'&&st[f]!='A'&&st[f]!='E'&&st[f]!='I'&&st[f]!='O'&&st[f]!='U') &&f<e;f++);
+            for(;(st[e]!='a'&&st[e]!='e'&&st[e]!='i'&&st[e]!='o'&&st[e]!='u'&&st[e]!='A'&&st[e]!='E'&&st[e]!='I'&&st[e]!='O'&&st[e]!='U')&& f<e;e--);
+            
+            char temp=st[f];
+            st[f]=st[e];
+            st[e]=temp;
+            f++;
+            e--;
         }
-        StringBuilder sb=new StringBuilder();
-        sb.append(vowels);
-        sb.reverse();
-        vowels=sb.toString();
-        for(int i=0,j=0;i<ch.length;i++){
-            char beg=ch[i];
-            if(beg=='a'||beg=='A'||beg=='e'||beg=='E'||beg=='i'||beg=='I'||beg=='o'||beg=='O'||beg=='u'||beg=='U'){
-                ans+=vowels.charAt(j);
-                j++;
-            }
-            else{
-                ans+=ch[i];
-            }
-                
-        }
-        return ans;
+        return new String(st);
     }
 }
